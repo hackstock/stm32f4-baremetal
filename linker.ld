@@ -10,23 +10,31 @@ SECTIONS
 {
     .isr_vector : 
     {
+        . = ALIGN(4);
         *(.isr_vector_tbl)
+        . = ALIGN(4);
     }> FLASH
 
     .text : 
     {
+        . = ALIGN(4);
         *(.text)
         *(.rodata)
+        . = ALIGN(4);
     }> FLASH
 
     .data : 
     {
+        . = ALIGN(4);
         *(.data)
+        . = ALIGN(4);
     }> SRAM AT> FLASH
 
     .bss : 
     {
+        . = ALIGN(4);
         *(.bss)
+        . = ALIGN(4);
     }>SRAM
 }
 
